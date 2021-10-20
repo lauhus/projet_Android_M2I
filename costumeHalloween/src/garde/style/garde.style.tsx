@@ -24,8 +24,8 @@ export default StyleSheet.create({
     },
     deco : {
         position: 'absolute',
-        width: 475,
-        height: 267,
+        width: 445,
+        height: 250,
         bottom: 0
     },
     buttonBg : {
