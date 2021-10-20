@@ -10,7 +10,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import { Accueil } from './src/accueil/Accueil'
 import { Detail } from './src/detail/Detail'
 import { Garde } from './src/garde/Garde'
-import { Liste } from './src/liste'
+import { Liste } from './src/liste/Liste'
 
 export type TStackRoute = {
   ['/garde']: any;
