@@ -8,7 +8,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import { Accueil } from './src/accueil/Accueil'
-import { Detail } from './src/detail/Detail'
+import { Detail } from './src/detail/Costume'
 import { Garde } from './src/garde/Garde'
 import { Liste } from './src/liste/Liste'
 
@@ -44,7 +44,7 @@ const App = () => {
               screenOptions={{
                 headerShown: false,
               }}
-              initialRouteName="/garde">
+              initialRouteName="/detail">
             <Stack.Screen name="/garde" component={Garde} />
             <Stack.Screen name="/accueil" component={Accueil} />
             <Stack.Screen name="/liste" component={Liste} />
