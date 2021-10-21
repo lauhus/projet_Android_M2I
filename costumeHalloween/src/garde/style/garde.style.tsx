@@ -34,8 +34,9 @@ export default StyleSheet.create({
         top : 350
     },
     texteGarde : {
+        fontFamily: 'Ribeye-Regular',
         color : 'white',
-        fontSize: 20,
-        fontWeight: "bold"
+        fontSize: 26,
+        fontWeight: "bold",
     }
 })

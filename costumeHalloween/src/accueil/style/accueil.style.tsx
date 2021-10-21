@@ -29,12 +29,12 @@ export default StyleSheet.create({
     title : {
         color : 'white',
         fontSize: 36,
-        fontFamily: "Ribeye"
+        fontFamily: 'Ribeye-Regular',
     },
     genre : {
         color : 'rgba(122, 122, 123, 1)',
         fontSize: 36,
-        fontFamily: "Ribeye",
+        fontFamily: 'Ribeye-Regular',
         fontWeight: 'bold'
     },
     mainWrapper: {
@@ -47,7 +47,7 @@ export default StyleSheet.create({
     mainWrapperTexte: {
         color: 'white',
         fontSize: 30,
-        fontFamily: "Ribeye",
+        fontFamily: 'Ribeye-Regular',
         left: 10,
     },
 })

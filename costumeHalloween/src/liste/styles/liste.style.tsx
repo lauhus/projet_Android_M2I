@@ -12,7 +12,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontFamily: 'Ribeye',
+    fontFamily: 'Ribeye-Regular',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: 36,
@@ -36,7 +36,6 @@ export default StyleSheet.create({
     left: 0,
     backgroundColor: 'white',
     borderRadius: 1,
-    fontFamily: 'Ribeye',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: 18,
@@ -52,3 +51,4 @@ export default StyleSheet.create({
     height: Dimensions.get('window').height,
   },
 });
+
