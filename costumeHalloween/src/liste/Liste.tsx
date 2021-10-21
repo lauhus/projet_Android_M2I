@@ -13,6 +13,7 @@ import {ListeStore} from './store/listeStore';
 import {TCharac} from './store/listeStore';
 import styles from './styles/liste.style';
 import {CardListe} from './CardListe';
+import { StatusBar } from 'react-native';
 
 type Props = {
   route: {params: {choice: string; gender: string}};
@@ -67,6 +68,10 @@ export class Liste extends React.Component<any, any> {
         ]);
       });
   }
+
+  componentDidMount() {
+    StatusBar.setHidden(true);
+ };
 
   componentDidUpdate() {
     if (this.state.reload) {
