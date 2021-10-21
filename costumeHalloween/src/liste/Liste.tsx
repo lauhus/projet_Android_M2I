@@ -6,6 +6,7 @@ import {
   Image,
   ScrollView,
   ActivityIndicator,
+  TouchableNativeFeedback,
 } from 'react-native';
 import React from 'react';
 import {ListeStore} from './store/listeStore';
@@ -14,7 +15,7 @@ import styles from './styles/liste.style';
 import {CardListe} from './CardListe';
 
 type Props = {
-  route: {params: {choice: string, gender: string}};
+  route: {params: {choice: string; gender: string}};
 };
 export class Liste extends React.Component<any, any> {
   state = {
@@ -26,10 +27,10 @@ export class Liste extends React.Component<any, any> {
     gender: '',
   };
 
-  constructor(props : Props) {
+  constructor(props: Props) {
     super(props);
-    this.state.choice = props.route.params.choice
-    this.state.gender = props.route.params.gender
+    this.state.choice = props.route.params.choice;
+    this.state.gender = props.route.params.gender;
     let listeStore = new ListeStore({choice: this.state.choice});
     listeStore
       .fetchCharacters()
@@ -109,12 +110,16 @@ export class Liste extends React.Component<any, any> {
   render() {
     return (
       <View style={styles.page}>
-        <Text style={styles.title}>
-          <TouchableHighlight onPress={() => this.props.navigation.goBack()}>
-            <Image source={require('../assets/arrowLeft.png')} />
-          </TouchableHighlight>
-          {this.state.title}
-        </Text>
+        <View style={styles.title}>
+          <TouchableNativeFeedback
+            onPress={() => this.props.navigation.goBack()}>
+            <Image
+              style={styles.image}
+              source={require('../assets/arrowLeft.png')}
+            />
+          </TouchableNativeFeedback>
+          <Text style={styles.text}>{this.state.title}</Text>
+        </View>
         <ScrollView>
           {this.state.characters.map((character: TCharac) => {
             return <CardListe key={character._id} character={character} />;
