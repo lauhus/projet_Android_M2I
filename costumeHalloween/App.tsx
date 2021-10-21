@@ -44,7 +44,7 @@ const App = () => {
               screenOptions={{
                 headerShown: false,
               }}
-              initialRouteName="/detail">
+              initialRouteName="/garde">
             <Stack.Screen name="/garde" component={Garde} />
             <Stack.Screen name="/accueil" component={Accueil} />
             <Stack.Screen name="/liste" component={Liste} />
