@@ -37,8 +37,8 @@ export function Accueil() {
                 <RadioButton value="male" color="black"/>
                 <Text style={styles.mainWrapperTexte}>Homme</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.mainWrapper} onPress={()=>setValue('')}>
-                <RadioButton value='' color="black"/>
+            <TouchableOpacity style={styles.mainWrapper} onPress={()=>setValue('other')}>
+                <RadioButton value='other' color="black"/>
                 <Text style={styles.mainWrapperTexte}>Autre</Text>
             </TouchableOpacity>
         </RadioButton.Group>
@@ -46,7 +46,7 @@ export function Accueil() {
             <Text style={styles.genre}>License</Text>
         </View>
         <RadioButton.Group
-        onValueChange={(newValue) => setValueLicense(newValue)}
+        onValueChange={newValue => setValueLicense(newValue)}
         value={valueLicense}>
             <TouchableOpacity style={styles.mainWrapper} onPress={()=>setValueLicense('')}>
                 <RadioButton value="hp" color="black" />

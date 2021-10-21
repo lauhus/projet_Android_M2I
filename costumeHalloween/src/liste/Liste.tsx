@@ -13,18 +13,23 @@ import {TCharac} from './store/listeStore';
 import styles from './styles/liste.style';
 import {CardListe} from './CardListe';
 
+type Props = {
+  route: {params: {choice: string, gender: string}};
+};
 export class Liste extends React.Component<any, any> {
   state = {
     title: 'Résultat',
     characters: [],
     isLoading: true,
     reload: false,
-    choice: 'got',
+    choice: '',
     gender: '',
   };
 
-  constructor(props) {
+  constructor(props : Props) {
     super(props);
+    this.state.choice = props.route.params.choice
+    this.state.gender = props.route.params.gender
     let listeStore = new ListeStore({choice: this.state.choice});
     listeStore
       .fetchCharacters()
@@ -40,7 +45,7 @@ export class Liste extends React.Component<any, any> {
             ...this.state,
 
             characters:
-              this.state.gender != ''
+              this.state.gender != 'other'
                 ? characters.filter(x => x.gender === this.state.gender)
                 : characters.sort((a, b) => (a.name > b.name ? 1 : -1)),
             isLoading: false,
@@ -79,7 +84,7 @@ export class Liste extends React.Component<any, any> {
             this.setState({
               ...this.state,
               characters:
-                this.state.gender != ''
+                this.state.gender != 'other'
                   ? characters.filter(x => x.gender === this.state.gender)
                   : characters.sort((a, b) => (a.name > b.name ? 1 : -1)),
               isLoading: false,

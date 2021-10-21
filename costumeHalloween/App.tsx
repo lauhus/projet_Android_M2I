@@ -16,7 +16,7 @@ import { TCharac } from "./src/liste/store/listeStore";
 export type TStackRoute = {
   ['/garde']: any;
   ['/accueil']: any;
-  ['/liste']: any;
+  ['/liste']: {choice : string, gender : string};
   ['/detail']: { character : TCharac};
 };
 
