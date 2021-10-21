@@ -2,7 +2,7 @@ import React from 'react';
 import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {HomePage} from './src/components/homepage/HomePage';
+// import {HomePage} from './src/components/homepage/HomePage';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
