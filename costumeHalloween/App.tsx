@@ -11,12 +11,13 @@ import { Accueil } from './src/accueil/Accueil'
 import { Detail } from './src/detail/Costume'
 import { Garde } from './src/garde/Garde'
 import { Liste } from './src/liste/Liste'
+import { TCharac } from "./src/liste/store/listeStore";
 
 export type TStackRoute = {
   ['/garde']: any;
   ['/accueil']: any;
   ['/liste']: any;
-  ['/detail']: any
+  ['/detail']: { character : TCharac};
 };
 
 const Stack = createStackNavigator<TStackRoute>();
@@ -44,7 +45,7 @@ const App = () => {
               screenOptions={{
                 headerShown: false,
               }}
-              initialRouteName="/garde">
+              initialRouteName="/liste">
             <Stack.Screen name="/garde" component={Garde} />
             <Stack.Screen name="/accueil" component={Accueil} />
             <Stack.Screen name="/liste" component={Liste} />
