@@ -19,7 +19,7 @@ export class Liste extends React.Component<any, any> {
     characters: [],
     isLoading: true,
     reload: false,
-    choice: 'hp',
+    choice: 'got',
     gender: '',
   };
 

@@ -1,7 +1,14 @@
-import {StyleSheet, View, Text, Image} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  TouchableNativeFeedback,
+} from 'react-native';
 import React from 'react';
 import style from './styles/costume.style';
 import {TCharac} from '../liste/store/listeStore';
+import {useNavigation} from '@react-navigation/core';
 
 type Props = {
   route: {params: {character: TCharac}};
@@ -9,6 +16,7 @@ type Props = {
 
 export function Detail(props: Props) {
   const charac: TCharac = props.route.params.character;
+  const nav = useNavigation();
 
   return (
     <View style={style.container}>
@@ -19,10 +27,12 @@ export function Detail(props: Props) {
       )}
       <View style={style.topbarre}>
         <View style={style.roundButton}>
-          <Image
-            style={style.arrowLeft}
-            source={require('../assets/arrowLeft.png')}
-          />
+          <TouchableNativeFeedback onPress={() => nav.goBack()}>
+            <Image
+              style={style.arrowLeft}
+              source={require('../assets/arrowLeft.png')}
+            />
+          </TouchableNativeFeedback>
         </View>
       </View>
       <View style={style.title}>
