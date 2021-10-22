@@ -64,7 +64,7 @@ export function Accueil() {
             </TouchableOpacity>
             <TouchableOpacity style={styles.mainWrapper} onPress={()=>setValue('other')}>
                 <RadioButton value='other' color="black"/>
-                <Text style={styles.mainWrapperTexte}>Autre</Text>
+                <Text style={styles.mainWrapperTexte}>Tous</Text>
             </TouchableOpacity>
         </RadioButton.Group>
         <View style={styles.backgroundLicense}>
