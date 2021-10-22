@@ -6,6 +6,7 @@ export type TCharac = {
   house: string;
   name: string;
   image: string;
+  actor: string;
 };
 
 export class ListeStore extends CrudStore {

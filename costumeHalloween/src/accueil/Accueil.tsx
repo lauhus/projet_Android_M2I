@@ -43,9 +43,7 @@ export function Accueil() {
         })
     }
 
-
     return (
-
     <View style={styles.background}>
       <View style={styles.backgroundTitle}>
         <Text style={styles.title}>Accueil</Text>

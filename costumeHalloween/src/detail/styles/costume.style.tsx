@@ -23,12 +23,12 @@ const  costume = StyleSheet.create({
 
   title: {
       position: 'relative',
-      top: 15
+      top : 20,
   },
   titleFont: {
     fontFamily: 'Ribeye-Regular',
     color: 'white',
-    fontSize: 25,
+    fontSize: 24,
   },
 
   containerText: {
@@ -42,12 +42,13 @@ const  costume = StyleSheet.create({
   },
   description:
   {
-      fontSize: 15,
-      fontFamily: 'cochin',
+      fontSize: 26,
       color: 'black',
       textAlign: 'justify',
       top: 15,
-      marginHorizontal: 15
+      marginHorizontal: 15,
+      fontWeight: 'bold',
+      fontFamily: 'Ribeye-Regular',
       
   },
   monImage:
@@ -60,8 +61,8 @@ const  costume = StyleSheet.create({
   arrowLeft:
   {
     position:'absolute',
-    width: 80,
-    height: 80
+    width: 85,
+    height: 85,
   },
 
   roundButton: {
@@ -71,8 +72,6 @@ const  costume = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       padding: 10,
-      borderRadius: 100,
-      backgroundColor: 'white',
       position: 'absolute',
       bottom:15,
       left:15

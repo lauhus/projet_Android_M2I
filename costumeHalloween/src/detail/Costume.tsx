@@ -42,7 +42,8 @@ export function Detail(props: Props) {
       <View style={style.containerText}>
         <Text style={style.description}>
           Genre : {charac.gender}{"\n"}
-          Maison : {charac.house}
+          Maison : {charac.house}{"\n"}
+          Acteur : {charac.actor}{"\n"}
         </Text>
       </View>
     </View>
