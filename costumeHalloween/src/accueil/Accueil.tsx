@@ -1,7 +1,7 @@
-import {View, Text, TouchableOpacity} from 'react-native';
-import React from 'react';
+import {View, Text, TouchableOpacity, Alert} from 'react-native';
+import React, { useEffect } from 'react';
 import styles from './style/accueil.style';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { RadioButton } from 'react-native-paper';
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
@@ -11,12 +11,39 @@ export function Accueil() {
     const [value, setValue] = React.useState('');
     const [valueLicense, setValueLicense] = React.useState('');
     const navigation = useNavigation<StackNavigationProp<any>>();
+    const getData = async () => {
+        try {
+          const jsonValue = await AsyncStorage.getItem('formulaire')
+          if (jsonValue != null) {
+              var result = JSON.parse(jsonValue)
+              setValue(result.value)
+              setValueLicense(result.valueLicense)
+          }
+          return jsonValue != null ? JSON.parse(jsonValue) : null;
+        } catch(e) {
+            console.log('error')
+        }
+    }
+    const storeData = async (value: { value: string; valueLicense: string; }) => {
+     try {
+         const jsonValue = JSON.stringify(value)
+         await AsyncStorage.setItem('formulaire', jsonValue)
+     } catch (e) {
+         console.log('error')
+     }
+     }
+    useEffect(()=>{
+        getData()
+    }, [])
     if (value != '' && valueLicense != '') {
+        storeData({value, valueLicense})
         navigation.navigate('/liste', {
           choice : valueLicense,
           gender : value  
         })
     }
+
+
     return (
 
     <View style={styles.background}>
@@ -29,8 +56,8 @@ export function Accueil() {
       <RadioButton.Group
         onValueChange={newValue => setValue(newValue)}
         value={value}>
-            <TouchableOpacity style={styles.mainWrapper} onPress={()=>setValue('female')}>
-                <RadioButton value="female" color="black"/>
+            <TouchableOpacity style={styles.mainWrapper} >
+                <RadioButton value="female" color="black" />
                 <Text style={styles.mainWrapperTexte}>Femme</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.mainWrapper} onPress={()=>setValue('male')}>
@@ -59,4 +86,5 @@ export function Accueil() {
         </RadioButton.Group>
     </View>);
 }
+
 
