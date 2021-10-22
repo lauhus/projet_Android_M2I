@@ -126,8 +126,8 @@ export class Liste extends React.Component<any, any> {
           <Text style={styles.text}>{this.state.title}</Text>
         </View>
         <ScrollView>
-          {this.state.characters.map((character: TCharac) => {
-            return <CardListe key={character._id} character={character} />;
+          {this.state.characters.map((character: TCharac, index) => {
+            return <CardListe key={character._id+character.name+index} character={character} />;
           })}
         </ScrollView>
         {this.state.isLoading && (
