@@ -28,7 +28,7 @@ const  costume = StyleSheet.create({
   titleFont: {
     fontFamily: 'Ribeye-Regular',
     color: 'white',
-    fontSize: 30,
+    fontSize: 25,
   },
 
   containerText: {
